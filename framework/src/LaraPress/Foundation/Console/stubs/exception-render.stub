@@ -1,0 +1,19 @@
+<?php
+
+namespace {{ namespace }};
+
+use Exception;
+
+class {{ class }} extends Exception
+{
+    /**
+     * Render the exception as an HTTP response.
+     *
+     * @param  \LaraPress\Http\Request  $request
+     * @return \LaraPress\Http\Response
+     */
+    public function render($request)
+    {
+        //
+    }
+}
