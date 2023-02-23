@@ -1,0 +1,36 @@
+<?php
+
+namespace {{ namespace }};
+
+use LaraPress\Broadcasting\Channel;
+use LaraPress\Broadcasting\InteractsWithSockets;
+use LaraPress\Broadcasting\PresenceChannel;
+use LaraPress\Broadcasting\PrivateChannel;
+use LaraPress\Contracts\Broadcasting\ShouldBroadcast;
+use LaraPress\Foundation\Events\Dispatchable;
+use LaraPress\Queue\SerializesModels;
+
+class {{ class }}
+{
+    use Dispatchable, InteractsWithSockets, SerializesModels;
+
+    /**
+     * Create a new event instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        //
+    }
+
+    /**
+     * Get the channels the event should broadcast on.
+     *
+     * @return \LaraPress\Broadcasting\Channel|array
+     */
+    public function broadcastOn()
+    {
+        return new PrivateChannel('channel-name');
+    }
+}

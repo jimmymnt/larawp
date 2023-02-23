@@ -1,0 +1,11 @@
+<?php
+
+namespace {{ namespace }};
+
+use LaraPress\Database\Eloquent\Factories\HasFactory;
+use LaraPress\Database\Eloquent\Model;
+
+class {{ class }} extends Model
+{
+    use HasFactory;
+}
