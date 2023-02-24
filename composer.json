@@ -1,9 +1,9 @@
 {
-  "name": "larapress/framework",
-  "description": "The Wordpress Larapress Framework.",
+  "name": "larawp/framework",
+  "description": "The Wordpress LaraWP Framework.",
   "keywords": [
     "wordpress",
-    "larapress",
+    "larawp",
     "laravel"
   ],
   "license": "MIT",
