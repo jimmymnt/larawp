@@ -61,8 +61,8 @@
       "src/LaraWP/Wordpress/helpers.php"
     ],
     "psr-4": {
-      "LaraPress\\": "src/LaraWP/",
-      "LaraPress\\Support\\": [
+      "LaraWP\\": "src/LaraWP/",
+      "LaraWP\\Support\\": [
         "src/LaraWP/Macroable/",
         "src/LaraWP/Collections/"
       ]
@@ -78,7 +78,7 @@
   "suggest": {
     "ext-bcmath": "Required to use the multiple_of validation rule.",
     "ext-ftp": "Required to use the Flysystem FTP driver.",
-    "ext-gd": "Required to use LaraPress\\Http\\Testing\\FileFactory::image().",
+    "ext-gd": "Required to use LaraWP\\Http\\Testing\\FileFactory::image().",
     "ext-memcached": "Required to use the memcache cache driver.",
     "ext-pcntl": "Required to use all features of the queue worker.",
     "ext-posix": "Required to use all features of the queue worker.",
