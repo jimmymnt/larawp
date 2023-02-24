@@ -54,17 +54,17 @@
   },
   "autoload": {
     "files": [
-      "src/LaraPress/Collections/helpers.php",
-      "src/LaraPress/Events/functions.php",
-      "src/LaraPress/Foundation/helpers.php",
-      "src/LaraPress/Support/helpers.php",
-      "src/LaraPress/Wordpress/helpers.php"
+      "src/LaraWP/Collections/helpers.php",
+      "src/LaraWP/Events/functions.php",
+      "src/LaraWP/Foundation/helpers.php",
+      "src/LaraWP/Support/helpers.php",
+      "src/LaraWP/Wordpress/helpers.php"
     ],
     "psr-4": {
-      "LaraPress\\": "src/LaraPress/",
+      "LaraPress\\": "src/LaraWP/",
       "LaraPress\\Support\\": [
-        "src/LaraPress/Macroable/",
-        "src/LaraPress/Collections/"
+        "src/LaraWP/Macroable/",
+        "src/LaraWP/Collections/"
       ]
     }
   },

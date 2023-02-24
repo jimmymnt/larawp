@@ -1,0 +1,10 @@
+<?php
+
+namespace {{ namespace }};
+
+use LaraWP\Database\Eloquent\Relations\Pivot;
+
+class {{ class }} extends Pivot
+{
+    //
+}

@@ -1,0 +1,20 @@
+<?php
+
+namespace {{ namespace }};
+
+use {{ rootNamespace }}Http\Controllers\Controller;
+use LaraWP\Http\Request;
+
+class {{ class }} extends Controller
+{
+    /**
+     * Handle the incoming request.
+     *
+     * @param  \LaraWP\Http\Request  $request
+     * @return \LaraWP\Http\Response
+     */
+    public function __invoke(Request $request)
+    {
+        //
+    }
+}
