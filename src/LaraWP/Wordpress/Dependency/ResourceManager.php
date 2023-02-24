@@ -79,8 +79,8 @@ class ResourceManager
 
     function ensureWpScriptStyle()
     {
-        lp_enqueue_script(false);
-        lp_enqueue_style(false);
+        wp_enqueue_script(false);
+        wp_enqueue_style(false);
         $this->register();
         do_action('lp_register_scripts', $this);
     }
@@ -174,7 +174,7 @@ class ResourceManager
         $src = lp_asset($src);
         $deps = Arr::wrap($deps);
         empty($ver) && $ver = $this->defaultVersion;
-        lp_register_script($handle, $src, $deps, $ver, $in_footer);
+        wp_register_script($handle, $src, $deps, $ver, $in_footer);
         $this->setupTranslation($handle);
         if ($data) {
             foreach ($data as $objName => $values) {
@@ -182,7 +182,7 @@ class ResourceManager
                     if ($values instanceof \Closure) {
                         $values = $values();
                     }
-                    lp_localize_script($handle, $objName, $values);
+                    wp_localize_script($handle, $objName, $values);
                 }
             }
         }
@@ -196,7 +196,7 @@ class ResourceManager
         $deps = Arr::wrap($deps);
         empty($ver) && $ver = $this->defaultVersion;
         isset($media) || $media = 'all';
-        lp_register_style($handle, $src, $deps, $ver, $media);
+        wp_register_style($handle, $src, $deps, $ver, $media);
     }
 
     protected function add($type, $data)
@@ -258,7 +258,7 @@ class ResourceManager
             isset($media) || $media = 'all';
             $src = lp_asset($src);
 
-            lp_enqueue_style($handle, $src, $deps, $ver, $media);
+            wp_enqueue_style($handle, $src, $deps, $ver, $media);
         }
     }
 
@@ -272,7 +272,7 @@ class ResourceManager
             empty($ver) && $ver = $this->defaultVersion;
             isset($in_footer) || $in_footer = true;
             $src = lp_asset($src);
-            lp_enqueue_script($handle, $src, $deps, $ver, $in_footer);
+            wp_enqueue_script($handle, $src, $deps, $ver, $in_footer);
             $this->setupTranslation($handle);
             if ($data) {
                 foreach ($data as $objName => $values) {
@@ -280,7 +280,7 @@ class ResourceManager
                         if ($values instanceof \Closure) {
                             $values = $values();
                         }
-                        lp_localize_script($handle, $objName, $values);
+                        wp_localize_script($handle, $objName, $values);
                     }
                 }
             }
@@ -335,7 +335,7 @@ class ResourceManager
         }
         $locale = $this->getTranslationData($domain);
         $content = 'wp.i18n.setLocaleData( ' . json_encode($locale) . ', "' . $domain . '" );';
-        lp_script_add_data($handle, 'data', $content);
+        wp_script_add_data($handle, 'data', $content);
         unset($this->js_translations[$handle]);
     }
 
