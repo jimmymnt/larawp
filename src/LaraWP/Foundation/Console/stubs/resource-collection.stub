@@ -1,0 +1,19 @@
+<?php
+
+namespace {{ namespace }};
+
+use LaraWP\Http\Resources\Json\ResourceCollection;
+
+class {{ class }} extends ResourceCollection
+{
+    /**
+     * Transform the resource collection into an array.
+     *
+     * @param  \LaraWP\Http\Request  $request
+     * @return array|\LaraWP\Contracts\Support\Arrayable|\JsonSerializable
+     */
+    public function toArray($request)
+    {
+        return parent::toArray($request);
+    }
+}

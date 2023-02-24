@@ -1,0 +1,21 @@
+<?php
+
+namespace {{ namespace }};
+
+use Closure;
+use LaraWP\Http\Request;
+
+class {{ class }}
+{
+    /**
+     * Handle an incoming request.
+     *
+     * @param  \LaraWP\Http\Request  $request
+     * @param  \Closure(\LaraWP\Http\Request): (\LaraWP\Http\Response|\LaraWP\Http\RedirectResponse)  $next
+     * @return \LaraWP\Http\Response|\LaraWP\Http\RedirectResponse
+     */
+    public function handle(Request $request, Closure $next)
+    {
+        return $next($request);
+    }
+}

@@ -1,0 +1,28 @@
+<?php
+
+use LaraWP\Database\Migrations\Migration;
+use LaraWP\Database\Schema\Blueprint;
+use LaraWP\Support\Facades\Schema;
+
+class {{ class }} extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        //
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        //
+    }
+}

@@ -1,0 +1,11 @@
+<?php
+
+namespace {{ namespace }};
+
+use {{ rootNamespace }}Http\Controllers\Controller;
+use LaraWP\Http\Request;
+
+class {{ class }} extends Controller
+{
+    //
+}
