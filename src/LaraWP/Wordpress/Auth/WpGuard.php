@@ -20,11 +20,11 @@ class WpGuard implements Guard
         if (!is_null($this->user)) {
             return $this->user;
         }
-        return $this->provider->retrieveById(lp_get_current_user());
+        return $this->provider->retrieveById(wp_get_current_user());
     }
 
     public function validate(array $credentials = [])
     {
-        return lp_authenticate($credentials['username'], $credentials['password']);
+        return wp_authenticate($credentials['username'], $credentials['password']);
     }
 }
