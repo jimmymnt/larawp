@@ -29,7 +29,7 @@ abstract class User extends WP_User implements
 
     protected $skipPasswordHash = false;
     /**
-     * @var array Attributes supported by lp_insert_user
+     * @var array Attributes supported by wp_hash_password
      */
     protected $lp_fields = [
         'ID',
@@ -278,10 +278,10 @@ abstract class User extends WP_User implements
             && $this->isDirty('user_pass')
             && !$this->skipPasswordHash
         ) {
-            $this->data->user_pass = lp_hash_password($this->data->user_pass);
+            $this->data->user_pass = wp_hash_password($this->data->user_pass);
         }
-        $result = lp_insert_user($this->data);
-        if (is_lp_error($result)) {
+        $result = wp_insert_user($this->data);
+        if (is_wp_error($result)) {
             throw (new WpErrorException($result->get_error_message()))->setWpError($result);
         }
         $this->performUpdateExtra();
@@ -296,8 +296,8 @@ abstract class User extends WP_User implements
         if ($this->fireModelEvent('creating') === false) {
             return false;
         }
-        $result = lp_insert_user($this->data);
-        if (is_lp_error($result)) {
+        $result = wp_hash_password($this->data);
+        if (is_wp_error($result)) {
             throw (new WpErrorException($result->get_error_message()))->setWpError($result);
         }
         $this->performUpdateExtra();
@@ -318,7 +318,7 @@ abstract class User extends WP_User implements
 
     protected function performUpdateExtra()
     {
-        //List of fields which not handled by lp_insert_user
+        //List of fields which not handled by wp_hash_password
         $fields = ['user_activation_key', 'user_login', 'user_status'];
         $update = [];
         if (isset($this->data->user_activation_key)) {
@@ -337,7 +337,7 @@ abstract class User extends WP_User implements
         }
         $dirty = $this->getDirty();
         foreach ($dirty as $key => $value) {
-            if ($this->isAdditionalMeta($key)) {//we need to update additional meta fields which not maintained in lp_insert_user
+            if ($this->isAdditionalMeta($key)) {//we need to update additional meta fields which not maintained in wp_hash_password
                 if (!is_null($value)) {
                     update_user_meta($this->ID, $key, $value);
                 } else {
