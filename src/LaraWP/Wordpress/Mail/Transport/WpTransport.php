@@ -66,7 +66,7 @@ class WpTransport extends Transport
         $sent = 0;
 
         foreach (array_keys($tos) as $to) {
-            if (!lp_mail($to, $subject, $body, $headers)) {
+            if (!wp_mail($to, $subject, $body, $headers)) {
                 $failedRecipients[] = $to;
             } else {
                 $sent++;
