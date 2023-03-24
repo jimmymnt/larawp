@@ -35,7 +35,8 @@ class WpTransport extends Transport
      */
     public function setPhpMailer($phpMailer)
     {
-        if ($children = $this->message->getChildren()) {
+        $children = $this->message;
+        if ($children && $children->getChildren()) {
             foreach ($children as $child) {
                 if ($child instanceof \Swift_Mime_EmbeddedFile) {
                     $body = $child->getBody();
