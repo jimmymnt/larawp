@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: alt
- * Date: 31-May-19
- * Time: 1:51 PM
- */
 
 namespace LaraWP\Wordpress\Model\Concerns;
 

@@ -13,6 +13,17 @@ class Kernel implements Contracts\Kernel
     protected $dispatchPriority = 10;
     protected $registerPriority = 10;
 
+    /**
+     * The application implementation.
+     *
+     * @var \LaraWP\Contracts\Foundation\Application
+     */
+    protected $app;
+    /**
+     * The router instance.
+     *
+     * @var \LaraWP\Wordpress\Admin\Routing\Router
+     */
     protected $router;
     /**
      * The application's middleware stack.

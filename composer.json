@@ -1,19 +1,15 @@
 {
   "name": "larawp/framework",
   "description": "The Wordpress LaraWP Framework.",
-  "keywords": [
-    "wordpress",
-    "larawp",
-    "laravel"
-  ],
+  "keywords": ["wordpress", "larawp", "laravel"],
   "license": "MIT",
   "homepage": "https://github.com/jimmy1993vn",
   "require": {
     "php": "^7.3|^8.0",
+    "ext-pdo": "*",
     "ext-json": "*",
     "ext-mbstring": "*",
     "ext-openssl": "*",
-    "ext-pdo": "*",
     "doctrine/inflector": "^1.4|^2.0",
     "dragonmantank/cron-expression": "^3.0.2",
     "egulias/email-validator": "^2.1.10",
@@ -42,8 +38,15 @@
     "voku/portable-ascii": "^1.6.1"
   },
   "require-dev": {
+    "aws/aws-sdk-php": "^3.198.1",
     "doctrine/dbal": "^2.13.3|^3.1.4",
-    "filp/whoops": "^2.14.3"
+    "filp/whoops": "^2.14.3",
+    "league/flysystem-cached-adapter": "^1.0",
+    "mockery/mockery": "^1.4.4",
+    "pda/pheanstalk": "^4.0",
+    "phpunit/phpunit": "^8.5.19|^9.5.8",
+    "predis/predis": "^1.1.9",
+    "symfony/cache": "^5.4"
   },
   "provide": {
     "psr/container-implementation": "1.0",
@@ -62,13 +65,16 @@
     ],
     "psr-4": {
       "LaraWP\\": "src/LaraWP/",
-      "LaraWP\\Support\\": [
-        "src/LaraWP/Macroable/",
-        "src/LaraWP/Collections/"
-      ]
+      "LaraWP\\Support\\": ["src/LaraWP/Macroable/", "src/LaraWP/Collections/"]
     }
   },
   "autoload-dev": {
+    "files": [
+      "tests/Database/stubs/MigrationCreatorFakeMigration.php"
+    ],
+    "psr-4": {
+      "LaraWP\\Tests\\": "tests/"
+    }
   },
   "extra": {
     "branch-alias": {

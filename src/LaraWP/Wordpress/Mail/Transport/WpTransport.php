@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: alt
- * Date: 28-May-19
- * Time: 2:23 PM
- */
 
 namespace LaraWP\Wordpress\Mail\Transport;
 

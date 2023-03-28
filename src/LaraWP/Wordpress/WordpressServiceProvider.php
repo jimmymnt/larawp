@@ -16,6 +16,7 @@ use LaraWP\Wordpress\Http\Response\Handler;
 use LaraWP\Wordpress\Http\Response\PassThrough;
 use LaraWP\Wordpress\Mail\Transport\WpTransport;
 use LaraWP\Wordpress\Model\User;
+use LaraWP\Wordpress\Providers\CarbonServiceProvider;
 use LaraWP\Wordpress\Routing\RoutingServiceProvider;
 use LaraWP\Wordpress\Shortcode\ShortcodeManager;
 use LaraWP\Wordpress\Translation\TranslationServiceProvider;
@@ -36,6 +37,9 @@ class WordpressServiceProvider extends ServiceProvider
 
     protected function registerChildServices()
     {
+        if (class_exists(\Carbon\Carbon::class)) {
+            $this->app->register(CarbonServiceProvider::class);
+        }
         $this->app->register(RoutingServiceProvider::class);
         $this->app->register(AuthServiceProvider::class);
         $this->app->register(AdminServiceProvider::class);
