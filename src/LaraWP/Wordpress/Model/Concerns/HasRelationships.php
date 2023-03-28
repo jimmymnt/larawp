@@ -6,7 +6,7 @@ use Closure;
 use LaraWP\Database\ClassMorphViolationException;
 use LaraWP\Database\Eloquent\Builder;
 use LaraWP\Database\Eloquent\Collection;
-use LaraWP\Database\Eloquent\Model;
+use LaraWP\Database\Eloquent\Contracts\Model;
 use LaraWP\Database\Eloquent\Relations\BelongsTo;
 use LaraWP\Database\Eloquent\Relations\BelongsToMany;
 use LaraWP\Database\Eloquent\Relations\HasMany;

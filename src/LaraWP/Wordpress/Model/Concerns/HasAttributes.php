@@ -26,8 +26,6 @@ use LaraWP\Support\Collection as BaseCollection;
 use LaraWP\Support\Facades\Crypt;
 use LaraWP\Support\Facades\Date;
 use LaraWP\Support\Str;
-use function LaraWP\Wordpress\Auth\Concerns\enum_exists;
-use const LaraWP\Wordpress\Auth\Concerns\PHP_FLOAT_EPSILON;
 
 trait HasAttributes
 {
