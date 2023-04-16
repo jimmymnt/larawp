@@ -801,7 +801,7 @@ class Builder
      *
      * @throws \InvalidArgumentException
      */
-    public function paginate($perPage = null, $columns = ['*'], $pageName = 'page', $page = null)
+    public function paginate($perPage = null, $columns = ['*'], $pageName = 'lp_page', $page = null)
     {
         $page = $page ?: Paginator::resolveCurrentPage($pageName);
 
@@ -826,7 +826,7 @@ class Builder
      * @param int|null $page
      * @return \LaraWP\Contracts\Pagination\Paginator
      */
-    public function simplePaginate($perPage = null, $columns = ['*'], $pageName = 'page', $page = null)
+    public function simplePaginate($perPage = null, $columns = ['*'], $pageName = 'lp_page', $page = null)
     {
         $page = $page ?: Paginator::resolveCurrentPage($pageName);
 

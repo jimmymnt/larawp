@@ -64,7 +64,7 @@ abstract class AbstractPaginator implements Htmlable
      *
      * @var string
      */
-    protected $pageName = 'page';
+    protected $pageName = 'lp_page';
 
     /**
      * The number of links to display on each side of current page link.
@@ -502,7 +502,7 @@ abstract class AbstractPaginator implements Htmlable
      * @param int $default
      * @return int
      */
-    public static function resolveCurrentPage($pageName = 'page', $default = 1)
+    public static function resolveCurrentPage($pageName = 'lp_page', $default = 1)
     {
         if (isset(static::$currentPageResolver)) {
             return (int)call_user_func(static::$currentPageResolver, $pageName);

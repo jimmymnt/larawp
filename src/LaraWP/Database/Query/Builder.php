@@ -2424,7 +2424,7 @@ class Builder
      * @param int|null $page
      * @return \LaraWP\Contracts\Pagination\LengthAwarePaginator
      */
-    public function paginate($perPage = 15, $columns = ['*'], $pageName = 'page', $page = null)
+    public function paginate($perPage = 15, $columns = ['*'], $pageName = 'lp_page', $page = null)
     {
         $page = $page ?: Paginator::resolveCurrentPage($pageName);
 
@@ -2449,7 +2449,7 @@ class Builder
      * @param int|null $page
      * @return \LaraWP\Contracts\Pagination\Paginator
      */
-    public function simplePaginate($perPage = 15, $columns = ['*'], $pageName = 'page', $page = null)
+    public function simplePaginate($perPage = 15, $columns = ['*'], $pageName = 'lp_page', $page = null)
     {
         $page = $page ?: Paginator::resolveCurrentPage($pageName);
 

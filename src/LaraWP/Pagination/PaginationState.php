@@ -20,7 +20,7 @@ class PaginationState
             return $app['request']->url();
         });
 
-        Paginator::currentPageResolver(function ($pageName = 'page') use ($app) {
+        Paginator::currentPageResolver(function ($pageName = 'lp_page') use ($app) {
             $page = $app['request']->input($pageName);
 
             if (filter_var($page, FILTER_VALIDATE_INT) !== false && (int)$page >= 1) {
